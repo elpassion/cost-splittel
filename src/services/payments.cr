@@ -23,7 +23,7 @@ module Services
     end
 
     def create
-      register = Payments::Register.create
+      register = ::Payments::Register.create
       @repository.save(register)
       register.id
     end
