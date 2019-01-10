@@ -1,6 +1,7 @@
-# TODO: Write documentation for `Cost::Splittel`
+require "./domain/payments/register.cr"
+
 module Cost::Splittel
   VERSION = "0.1.0"
-
-  # TODO: Put your code here
 end
+
+register = Payments::Register.create
