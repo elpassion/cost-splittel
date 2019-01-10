@@ -23,14 +23,14 @@ module Payments
     def initialize(@id : RegisterId)
     end
 
-    def add_participant(participant : Participant)
+    def add_participant(participant : ParticipantId)
       raise "register is closed" if closed?
       raise "participant already taking part" if taking_part?(participant)
 
-      @participants << participant.id
+      @participants << participant
     end
 
-    def add_cost(amount : Money, payer : Participant)
+    def add_cost(amount : Money, payer : ParticipantId)
       raise "register is closed" if closed?
       raise "participant is not taking part" unless taking_part?(payer)
 
@@ -48,8 +48,8 @@ module Payments
       !@open
     end
 
-    def taking_part?(participant)
-      @participants.includes?(participant.id)
+    def taking_part?(participant : ParticipantId)
+      @participants.includes?(participant)
     end
   end
 end
