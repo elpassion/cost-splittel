@@ -1,0 +1,14 @@
+name: cost-splittel
+version: 0.1.0
+
+authors:
+  - Arkadiusz Oleksy <arkadiusz.oleksy@elpassion.pl>
+  - Konrad Szczesniak <konrad.szczesniak@elpassion.pl>
+
+targets:
+  cost-splittel:
+    main: src/cost-splittel.cr
+
+crystal: 0.27.0
+
+license: MIT
